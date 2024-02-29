@@ -1,0 +1,10 @@
+{
+  "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+  "files.associations": {
+    "*.tcc": "cpp",
+    "compare": "cpp",
+    "memory_resource": "cpp",
+    "type_traits": "cpp",
+    "iostream": "cpp"
+  }
+}
