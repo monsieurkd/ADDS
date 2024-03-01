@@ -11,11 +11,11 @@ Human::Human(string name) : Player(name)
 Human::Human() : Player("Human")
 {
         // cout << "Enter move: ";
-        cin >> move;
 };
 
 char Human::makeMove()
 {
+        cin >> move;
 
         return move;
 };
