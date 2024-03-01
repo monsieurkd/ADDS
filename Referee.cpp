@@ -5,12 +5,13 @@
 
 Referee::Referee(){}; // constructor
 Player * Referee::refGame(Player * player1, Player * player2){
-    if (player1->makeMove() == 'R' and player2->makeMove()  == 'P'){
-        return player2;
+char a = player1->makeMove();
+char b = player2->makeMove() ;
+if((a == 'R' && b=='P') or (a == 'P' && b=='S') or (a == 'S' && b=='R')){  return player2; }
+else if((b == 'R' && a=='P') or (b == 'P' && a=='S') or (b == 'S' && a=='R')){  return player1; }
 
-    }else if( player1->makeMove() == 'R' and player2->makeMove() == 'S'){
-        return player1;
-    } else{
+
+    else{
         return nullptr;
     }
 };

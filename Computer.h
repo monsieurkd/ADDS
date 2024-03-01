@@ -6,7 +6,7 @@
 using namespace std;
 
 class Computer : public Player{
-    string  name;
+    
     public:
         Computer(string name);
         Computer(); 

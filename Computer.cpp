@@ -1,6 +1,6 @@
 #include "Computer.h"
 
-        Computer::Computer(string name): name(name){};
+        Computer::Computer(string name): Player(name){};
         Computer::Computer() : Player("Computer") {}; 
 
         char Computer::makeMove(){

@@ -17,19 +17,15 @@ int main()
 
     // Get winner from referee
     Player *winner = referee.refGame(human, computer);
-
+    
     // Print the name of the winner
-    if (winner == human)
-    {
-        std::cout << human->getName() << " Wins\n";
-    }
-    else if (winner == computer)
-    {
-        std::cout << computer->getName() << " Wins\n";
+    if (winner == nullptr){
+        
+        std::cout << "It's a Tie\n";
     }
     else
     {
-        std::cout << "It's a Tie\n";
+        std::cout << winner->getName()<< " Wins";
     }
 
     // Free memory
