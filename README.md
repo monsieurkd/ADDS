@@ -1,0 +1,1 @@
+g++ -o main.exe -std=c++11 -O2 -Wall *.cpp
