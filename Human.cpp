@@ -5,12 +5,12 @@ using namespace std;
 
 Human::Human(string name) : Player(name)
 {
-        cout << "Enter move: ";
+        // cout << "Enter move: "; 
         cin >> move;
 };
 Human::Human() : Player("Human")
 {
-        cout << "Enter move: ";
+        // cout << "Enter move: ";
         cin >> move;
 };
 

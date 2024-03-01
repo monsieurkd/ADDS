@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    Human *human = new Human("Mei");
+    Human *human = new Human();
     Player *computer = new Computer();
 
     // Create referee

@@ -11,7 +11,7 @@ if((a == 'R' && b=='P') or (a == 'P' && b=='S') or (a == 'S' && b=='R')){  retur
 else if((b == 'R' && a=='P') or (b == 'P' && a=='S') or (b == 'S' && a=='R')){  return player1; }
 
 
-    else{
+    else if(a == b){
         return nullptr;
     }
 };
