@@ -1,0 +1,5 @@
+// high level class should depend on low level class (car depend on iengine not diesel or petrol engine)
+// change the plug aka socket design
+
+
+//LSP base class make promise, keep that promise
