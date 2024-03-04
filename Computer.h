@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "Player.h"
+#include "Move.h"
 using namespace std;
 
 class Computer : public Player{
@@ -11,7 +12,7 @@ class Computer : public Player{
         Computer(string name);
         Computer(); 
 
-        char makeMove() override;
+        Move * makeMove() override;
         string getName() override;
         
 

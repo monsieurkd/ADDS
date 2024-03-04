@@ -3,16 +3,16 @@
 #include <iostream>
 #include <string>
 #include "Player.h"
+#include "Move.h"
 using namespace std;
 
 class Human : public Player{
-    char move;
     
     public:
         Human(string name);
         Human(); 
 
-        char makeMove() override;
+        Move * makeMove() override;
         string getName() override;
         
 
