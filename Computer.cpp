@@ -5,7 +5,7 @@
         Computer::Computer() : Player("Computer") {}; 
 
         Move* Computer::makeMove(){
-                Move* m = new Move("R");
+                Move* m = new Move("Rock");
                 return m;
         };
         string Computer::getName(){
