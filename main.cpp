@@ -5,7 +5,7 @@
 #include "Referee.h"
 #include "Human.h"
 #include "Computer.h"
-using namespace std;
+#include <typeinfo>
 
 int main()
 {
@@ -17,15 +17,16 @@ int main()
 
     // Get winner from referee
     Player *winner = referee.refGame(human, computer);
-    
+
     // Print the name of the winner
-    if (winner == nullptr){
-        
+    if (winner == nullptr)
+    {
+
         std::cout << "It's a Tie\n";
     }
     else
     {
-        std::cout << winner->getName()<< " Wins";
+        std::cout << winner->getName() << " Wins";
     }
 
     // Free memory

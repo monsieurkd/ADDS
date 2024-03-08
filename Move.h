@@ -55,14 +55,26 @@ public:
     {
     }
 };
-
+class Paper : public Move
+{
+public:
+    Paper() : Move("Paper")
+    {
+    }
+};class Scissors : public Move
+{
+public:
+    Scissors() : Move("Scissors")
+    {
+    }
+};
 class Assign
 {
     Move *move;
 
 public:
     Assign(){};
-    Assign(std::string name) :
+    Assign(std::string name) 
     {
         if (name == "Robot")
         {
@@ -83,5 +95,8 @@ public:
             move = new  Monkey();
         };
     };
+    Move*  getMove(){
+        return this->move; 
+    }
 };
 #endif
