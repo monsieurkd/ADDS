@@ -21,9 +21,9 @@ Move * Human::makeMove()
 {
         string move;
         cin >> move;
-        Assign * m = new Assign(move);
+        Move * m = new Assign(move);
 
-        return m->getMove();
+        return m;
 };
 string Human::getName()
 {

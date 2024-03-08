@@ -68,7 +68,7 @@ public:
     {
     }
 };
-class Assign
+class Assign: public Move
 {
     Move *move;
 
@@ -95,8 +95,6 @@ public:
             move = new  Monkey();
         };
     };
-    Move*  getMove(){
-        return this->move; 
-    }
+
 };
 #endif
