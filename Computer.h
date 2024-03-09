@@ -11,7 +11,7 @@ class Computer : public Player{
     public:
         Computer(string name);
         Computer(); 
-
+        string getMove();
         Move * makeMove() override;
         string getName() override;
         
