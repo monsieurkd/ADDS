@@ -6,12 +6,14 @@ Computer::Computer() : Player("Computer"){};
 
 Move *Computer::makeMove()
 {
-        this->move = new Assign("Rock");
+        Assign assigner;
+        this->move = assigner.AssignMove("Rock");
         return this->move;
 };
 
-string Computer::getMove(){
-        Move * a = this->move;
+string Computer::getMove()
+{
+        Move *a = this->move;
         return a->getName();
 }
 string Computer::getName()

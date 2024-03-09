@@ -15,7 +15,7 @@ Player *Referee::refGame(Player *player1, Player *player2)
     Move *b = player2->makeMove();
     string  result = a->getName();
     string target = b->getName();
-    cout << result <<" " <<target;
+    
     vector<string> winHandA = a->getVector();
     string p1 = player1->getName();
 

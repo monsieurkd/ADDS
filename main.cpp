@@ -20,7 +20,7 @@ int main()
     // Get winner from referee
     Player *winner = referee.refGame(human1, human2);
     cout << human1->getMove();
-    
+   
 
 
     // Print the name of the winner

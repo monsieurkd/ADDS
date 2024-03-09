@@ -21,8 +21,8 @@ Move * Human::makeMove()
 {
         string move;
         cin >> move;
-        this->move = new Assign(move);
-     
+        Assign assigner;
+        this->move = assigner.AssignMove(move);
 
         return this->move;
 };
