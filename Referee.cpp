@@ -12,9 +12,9 @@ Referee::Referee(){}; // constructor
 Player *Referee::refGame(Player *player1, Player *player2)
 {
     Move *a = player1->makeMove();
-    string p1 = a->getName();
+    string p1 = player1->getName();
     Move *b = player2->makeMove();
-    string p2 = b->getName();
+    string p2 = player2->getName();
 
     cout<<p1 << " " << p2;
 
