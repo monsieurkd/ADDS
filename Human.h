@@ -13,6 +13,7 @@ class Human : public Player{
         Human(); 
 
         Move * makeMove() override;
+        string getMove();
         string getName() override;
         
 

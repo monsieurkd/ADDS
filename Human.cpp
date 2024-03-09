@@ -21,10 +21,16 @@ Move * Human::makeMove()
 {
         string move;
         cin >> move;
-        Move * m = new Assign(move);
+        this->move = new Assign(move);
 
-        return m;
+        return this->move;
 };
+
+string Human::getMove(){
+        Move * a = this->move;
+        return a->getName();
+}
+
 string Human::getName()
 {
         return this->name;

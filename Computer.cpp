@@ -6,8 +6,8 @@ Computer::Computer() : Player("Computer"){};
 
 Move *Computer::makeMove()
 {
-        Assign *m = new Assign("Rock");
-        return m;
+        this->move = new Assign("Robot");
+        return this->move;
 };
 string Computer::getName()
 {

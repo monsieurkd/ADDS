@@ -6,17 +6,22 @@
 #include "Human.h"
 #include "Computer.h"
 #include <typeinfo>
+#include "Move.h"
 
 int main()
 {
-    Human *human = new Human();
-    Player *computer = new Computer();
+    Human *human1 = new Human();
+    Human *human2 = new Human();
+
 
     // Create referee
     Referee referee;
 
     // Get winner from referee
-    Player *winner = referee.refGame(human, computer);
+    Player *winner = referee.refGame(human1, human2);
+    cout << human1->getMove();
+    
+
 
     // Print the name of the winner
     if (winner == nullptr)
@@ -30,8 +35,6 @@ int main()
     }
 
     // Free memory
-    delete human;
-    delete computer;
-
+  
     return 0;
 }
