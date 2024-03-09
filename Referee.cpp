@@ -16,7 +16,7 @@ Player *Referee::refGame(Player *player1, Player *player2)
     Move *b = player2->makeMove();
     string p2 = player2->getName();
 
-    cout<<p1 << " " << p2;
+   
 
     vector<string> Robot = {"Ninja",
                             "Zombie"};
