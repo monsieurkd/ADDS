@@ -10,7 +10,7 @@
 
 int main()
 {
-    Human *human1 = new Human();
+    Human *human1 = new Human("John"); // Create a human player with the name
     Human *human2 = new Human();
 
 

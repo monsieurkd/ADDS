@@ -2,11 +2,12 @@
 #define MOVE_H
 #include <string>
 #include <vector>
+using namespace std;
 class Move
 {
 protected:
     std::string move;
-    vector<string> winHand;
+    std::vector<string> winHand;
 public:
     Move();
     Move(std::string m);
@@ -26,9 +27,7 @@ class Monkey : public Move
         vector<string> winHand = {"Ninja",
                              "Robot"};
 public:
-vector<string> getVector(){
-    return this->winHand;
-}
+
     Monkey() : Move("Monkey")
     {
     }
@@ -39,9 +38,7 @@ class Robot : public Move
         vector<string> winHand = {"Ninja",
                             "Zombie"};
 public:
-vector<string> getVector(){
-    return this->winHand;
-}
+
     Robot() : Move("Robot")
     {
     }
@@ -51,9 +48,7 @@ class Ninja : public Move
      vector<string> winHand= {"Pirate",
                             "Zombie"};
 public:
-vector<string> getVector(){
-    return this->winHand;
-}
+
     Ninja() : Move("Ninja")
     {
     }
@@ -63,9 +58,7 @@ class Pirate : public Move
         vector<string> winHand= {"Robot",
                              "Monkey"};
 public:
-vector<string> getVector(){
-    return this->winHand;
-}
+
     Pirate() : Move("Pirate")
     {
     }
@@ -76,9 +69,7 @@ class Zombie : public Move
         vector<string> winHand = {"Pirate",
                              "Monkey"};
 public:
-vector<string> getVector(){
-    return this->winHand;
-}
+
     Zombie() : Move("Zombie")
     {
     }
@@ -88,9 +79,7 @@ class Rock : public Move
     vector<string> winHand = {"Scissors"};
 
 public:
-vector<string> getVector(){
-    return this->winHand;
-}
+
     Rock() : Move("Rock")
     {
     }
@@ -100,9 +89,7 @@ class Paper : public Move
     vector<string> winHand = {"Rock"};
 
 public:
-vector<string> getVector(){
-    return this->winHand;
-}
+
     Paper() : Move("Paper")
     {
     }
@@ -111,9 +98,7 @@ vector<string> getVector(){
     vector<string> winHand = {"Paper"};
 
 public:
-vector<string> getVector(){
-    return this->winHand;
-}
+
     Scissors() : Move("Scissors")
     {
     }

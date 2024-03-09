@@ -14,8 +14,8 @@ Player *Referee::refGame(Player *player1, Player *player2)
     Move *a = player1->makeMove();
     Move *b = player2->makeMove();
     string  result = a->getName();
-    string target = a->getName();
-    
+    string target = b->getName();
+    cout << result <<" " <<target;
     vector<string> winHandA = a->getVector();
     string p1 = player1->getName();
 
@@ -25,7 +25,7 @@ Player *Referee::refGame(Player *player1, Player *player2)
 
 
 
-    if (p1 == p2)
+    if (result == target)
     {
         return nullptr;
     }
@@ -34,6 +34,7 @@ Player *Referee::refGame(Player *player1, Player *player2)
         if(winHandA[i]==target){
             return player1;
     }
+    };
     
 
         return player2;
