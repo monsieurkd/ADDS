@@ -36,11 +36,3 @@ string Reverser::reverseString(string s){
 
 }
 
-int main(){
-    Reverser a;
-    cout<< a.reverseDigit(123456789) <<endl;
-    cout<<a.reverseString("abcdefgh");
-    // string s = "abcdef";
-    // cout << s[-1]<<endl;
-    // cout<<s.substr(0, s.length()-2);
-}
