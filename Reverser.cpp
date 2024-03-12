@@ -1,7 +1,9 @@
 #include <iostream>
+#include "Reverser.h"
 #include <string>
 using namespace std;
-int reverseDigit(int num)
+
+int Reverser::reverseDigit(int num)
 {
     static int reversedNum = 0;
 
@@ -25,7 +27,7 @@ int reverseDigit(int num)
 
 
 
-string reverseString(string s){
+string Reverser::reverseString(string s){
     if  (s.length() <= 1){
         return s;
     }
@@ -35,8 +37,9 @@ string reverseString(string s){
 }
 
 int main(){
-    cout<< reverseDigit(123456789) <<endl;
-    cout<<reverseString("abcdefgh");
+    Reverser a;
+    cout<< a.reverseDigit(123456789) <<endl;
+    cout<<a.reverseString("abcdefgh");
     // string s = "abcdef";
     // cout << s[-1]<<endl;
     // cout<<s.substr(0, s.length()-2);
