@@ -6,7 +6,9 @@ using namespace std;
 int Reverser::reverseDigit(int num)
 {
     static int reversedNum = 0;
-
+    if(num <0){
+        return -1;
+    }
     // Base case: when the original number becomes 0, return the reversed number
     if (num == 0)
     {
@@ -28,7 +30,10 @@ int Reverser::reverseDigit(int num)
 
 
 string Reverser::reverseString(string s){
-    if  (s.length() <= 1){
+    if (s.length() ==0){
+        return "ERROR";
+    }
+    if  (s.length() == 1){
         return s;
     }
         return s.back() + reverseString(s.substr(0, s.length()-1));
