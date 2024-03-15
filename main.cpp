@@ -10,7 +10,7 @@ int main(){
     Reverser r1,r2;
     cout << r1.reverseDigit(987654321);
     cout << r2.reverseString("Hello World") << endl;
-    TruckLoads a;
+    Truckloads a;
     cout << a.numTrucks(1024,5);
     
 

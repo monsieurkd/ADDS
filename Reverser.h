@@ -5,7 +5,7 @@
 
 class Reverser{
     public:
-    int reverseDigit(int n);
+    int reverseDigit(int n, int accumulative = 0);
     std::string reverseString(std::string s);
 }
 ;
