@@ -1,17 +1,14 @@
-#include "Reverser.h"
-#include "Truckloads.h"
 #include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
 using namespace std;
 
-
-
-
 int main(){
-    Reverser r1,r2;
-    cout << r1.reverseDigit(987654321);
-    cout << r2.reverseString("Hello World") << endl;
-    Truckloads a;
-    cout << a.numTrucks(1024,5);
-    
 
+string test = "inthenameoflove";
+cout <<test.length()<<endl;
+test.find("i",0);
+test.substr(0,5);
+return 0;
 }
