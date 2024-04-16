@@ -15,10 +15,7 @@ int main(){
 
     QuickSort qs;
     vector<int> d = qs.sort(a);
-    
-    for (std::vector<int>::size_type i = 0; i < d.size(); i ++){
-        cout << d[i] << " ";
-    }
+   
     return 0;
 }
 
