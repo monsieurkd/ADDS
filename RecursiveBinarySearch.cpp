@@ -10,9 +10,9 @@ bool binarySearch(std::vector<int> &list, int n,int  start,int  end){
     if (list[mid] == n){
         return true;
     }else if (list[mid] > n){
-        return binarySearch(list, n, mid+1, end);
-    }else{
         return binarySearch(list, n, start, mid-1);
+    }else{
+        return binarySearch(list, n, mid+1, end);
     }
 };
 
