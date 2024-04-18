@@ -2,6 +2,7 @@
 #include <vector>
 #include "BubbleSort.h"
 #include "QuickSort.h"
+#include "RecursiveBinarySearch.h"
 
 #include <vector>
 using namespace std;
@@ -15,10 +16,11 @@ int main(){
 
     QuickSort qs;
     vector<int> d = qs.sort(a);
-   
+    RecursiveBinarySearch rbs;
+    bool search = rbs.search(d, 1);
+    cout << (search ? "true" : "false") << " ";
+    for (std::vector<int>::size_type i = 0; i < d.size(); i ++){
+        cout << d[i] << " ";
+    }
     return 0;
 }
-
-
-
-

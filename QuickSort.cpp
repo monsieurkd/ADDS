@@ -1,6 +1,6 @@
 #include "QuickSort.h"
 using namespace std;
-int partition(std::vector<int> arr, int low,int high)
+int partition(std::vector<int> &arr, int low,int high)
 {
   //choose the pivot
   
@@ -25,7 +25,7 @@ int partition(std::vector<int> arr, int low,int high)
 
 // The Quicksort function Implement
            
-void quickSort(std::vector<int> arr,int low,int high)
+void quickSort(std::vector<int> &arr,int low,int high)
 {
   // when low is less than high
   if(low<high)
