@@ -9,13 +9,15 @@ using namespace std;
 
 int main(){
 
-    BubbleSort bs;
-    vector<int> a = {1,2,3,8,9,1,2};
-    vector<int> c = {1,2,3,8,9,1,2};
-
-
+    vector<int> input_list;
+    int num;
+    while (cin >> num) {
+        input_list.push_back(num);
+        if (cin.peek() == '\n')
+            break;
+    }
     QuickSort qs;
-    vector<int> d = qs.sort(a);
+    vector<int> d = qs.sort(input_list);
     RecursiveBinarySearch rbs;
     bool search = rbs.search(d, 1);
     cout << (search ? "true" : "false") << " ";
