@@ -36,9 +36,10 @@ return;
 }
 // if inserting between two nodes; i.e. [A, C] -> [A, B, C]
 Node *prevNode = traverse(pos-1);
+Node *currNode = traverse(pos);
 // if inserting out of bounds, abort
-if (prevNode == nullptr) {
-prevNode = new Node(newNum, nullptr );
+if (currNode== nullptr) {
+currNode= new Node(newNum, nullptr );
 return;
 }   
 Node *newNode = new Node(newNum, prevNode->link);
