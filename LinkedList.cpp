@@ -66,18 +66,12 @@ bool LinkedList::deletePosition(int pos){
         return true;
     }
 
-    Node* preNode = nullptr;
-    Node* currNode = head;
-    int count = 0;
+    Node* preNode = LinkedList::traverse(pos -1);
+    Node* currNode = LinkedList::traverse(pos);
+    int count = LinkedList::get(pos);
 
-    // Traverse to the node before the one to be deleted
-    while (currNode && count < pos) {
-        preNode = currNode;
-        currNode = currNode->link;
-        count++;
-    }
 
-    if (count != pos || !currNode) {
+    if (!currNode) {
         return false; // Position out of bounds
     }
 
