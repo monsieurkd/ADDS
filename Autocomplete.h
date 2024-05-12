@@ -16,7 +16,7 @@ public:
     }
 };
 
-class AutoComplete {
+class Autocomplete {
 private:
     TrieNode* root;
 
@@ -24,7 +24,7 @@ private:
     void getAllWords(TrieNode* node, string prefix, vector<string>& suggestions);
 
 public:
-    AutoComplete();
+    Autocomplete();
     vector<string> getSuggestions(string partialWord);
     void insert(string word);
 };

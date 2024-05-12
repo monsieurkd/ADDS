@@ -1,6 +1,6 @@
 #include "Autocomplete.h"
 
-void AutoComplete::insertWord(string word) {
+void Autocomplete::insertWord(string word) {
     TrieNode* current = root;
     for (char c : word) {
         if (!current->children[c]) {
@@ -11,7 +11,7 @@ void AutoComplete::insertWord(string word) {
     current->isEndOfWord = true;
 }
 
-void AutoComplete::getAllWords(TrieNode* node, string prefix, vector<string>& suggestions) {
+void Autocomplete::getAllWords(TrieNode* node, string prefix, vector<string>& suggestions) {
     if (node->isEndOfWord) {
         suggestions.push_back(prefix);
     }
@@ -20,11 +20,11 @@ void AutoComplete::getAllWords(TrieNode* node, string prefix, vector<string>& su
     }
 }
 
-AutoComplete::AutoComplete() {
+Autocomplete::Autocomplete() {
     root = new TrieNode();
 }
 
-vector<string> AutoComplete::getSuggestions(string partialWord) {
+vector<string> Autocomplete::getSuggestions(string partialWord) {
     TrieNode* current = root;
     vector<string> suggestions;
     for (char c : partialWord) {
@@ -37,6 +37,6 @@ vector<string> AutoComplete::getSuggestions(string partialWord) {
     return suggestions;
 }
 
-void AutoComplete::insert(string word) {
+void Autocomplete::insert(string word) {
     insertWord(word);
 }
