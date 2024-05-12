@@ -1,64 +1,6 @@
 #include <iostream>
-#include <vector>
-#include <unordered_map>
+#include "AutoComplete.h"
 using namespace std;
-
-class TrieNode {
-public:
-    unordered_map<char, TrieNode*> children;
-    bool isEndOfWord;
-
-    TrieNode() {
-        isEndOfWord = false;
-    }
-};
-
-class Autocomplete {
-private:
-    TrieNode* root;
-
-    void insertWord(string word) {
-        TrieNode* current = root;
-        for (char c : word) {
-            if (!current->children[c]) {
-                current->children[c] = new TrieNode();
-            }
-            current = current->children[c];
-        }
-        current->isEndOfWord = true;
-    }
-
-    void getAllWords(TrieNode* node, string prefix, vector<string>& suggestions) {
-        if (node->isEndOfWord) {
-            suggestions.push_back(prefix);
-        }
-        for (auto& it : node->children) {
-            getAllWords(it.second, prefix + it.first, suggestions);
-        }
-    }
-
-public:
-    Autocomplete() {
-        root = new TrieNode();
-    }
-
-    vector<string> getSuggestions(string partialWord) {
-        TrieNode* current = root;
-        vector<string> suggestions;
-        for (char c : partialWord) {
-            if (!current->children[c]) {
-                return suggestions;
-            }
-            current = current->children[c];
-        }
-        getAllWords(current, partialWord, suggestions);
-        return suggestions;
-    }
-
-    void insert(string word) {
-        insertWord(word);
-    }
-};
 
 int main() {
     Autocomplete autocomplete;
