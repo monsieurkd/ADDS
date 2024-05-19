@@ -55,8 +55,9 @@ Heap<T>::Heap(std::vector<T> start_values) {
 /*******************************/
 
 template <typename T>
-void Heap<T>::insert(const T& value) {
-    heap.push_back(value);
+void Heap<T>::insert(T value) {
+  // TODO: TO BE IMPLEMENTED
+     heap.push_back(value);
     heapifyUp(heap.size() - 1);
 }
 
@@ -65,8 +66,9 @@ void Heap<T>::insert(const T& value) {
 /*******************************/
 
 template <typename T>
-void Heap<T>::remove() {
-    if (heap.empty()) {
+void Heap<T>::remove(T value) {
+  // TODO: TO BE IMPLEMENTED
+  if (heap.empty()) {
         throw std::out_of_range("Heap is empty");
     }
     heap[0] = heap.back();
@@ -81,8 +83,9 @@ void Heap<T>::remove() {
 /*******************************/
 
 template <typename T>
-T Heap<T>::getMin() const {
-    if (heap.empty()) {
+T Heap<T>::getMin() {
+  // TODO: TO BE IMPLEMENTED
+  if (heap.empty()) {
         throw std::out_of_range("Heap is empty");
     }
     return heap[0];
