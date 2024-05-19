@@ -3,12 +3,16 @@
 
 #include <vector>
 #include <cmath>  // for floor
+#include <stdexcept> // for std::out_of_range
+#include <algorithm> // for std::swap
 
 template <typename T>
 class Heap {
  private:
   std::vector<T> values;
   void heapify(int);
+  void heapifyUp(int index);
+  void heapifyDown(int index);
 
  public:
   Heap();  // constructs an empty heap
@@ -56,9 +60,8 @@ Heap<T>::Heap(std::vector<T> start_values) {
 
 template <typename T>
 void Heap<T>::insert(T value) {
-  // TODO: TO BE IMPLEMENTED
-     heap.push_back(value);
-    heapifyUp(heap.size() - 1);
+  values.push_back(value);
+  heapifyUp(values.size() - 1);
 }
 
 /*******************************/
@@ -67,15 +70,23 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::remove(T value) {
-  // TODO: TO BE IMPLEMENTED
-  if (heap.empty()) {
-        throw std::out_of_range("Heap is empty");
-    }
-    heap[0] = heap.back();
-    heap.pop_back();
-    if (!heap.empty()) {
-        heapifyDown(0);
-    }
+  if (values.empty()) {
+    throw std::out_of_range("Heap is empty");
+  }
+
+  auto it = std::find(values.begin(), values.end(), value);
+  if (it == values.end()) {
+    throw std::invalid_argument("Value not found in heap");
+  }
+
+  int index = std::distance(values.begin(), it);
+  values[index] = values.back();
+  values.pop_back();
+
+  if (index < values.size()) {
+    heapifyUp(index);
+    heapifyDown(index);
+  }
 }
 
 /*******************************/
@@ -84,11 +95,10 @@ void Heap<T>::remove(T value) {
 
 template <typename T>
 T Heap<T>::getMin() {
-  // TODO: TO BE IMPLEMENTED
-  if (heap.empty()) {
-        throw std::out_of_range("Heap is empty");
-    }
-    return heap[0];
+  if (values.empty()) {
+    throw std::out_of_range("Heap is empty");
+  }
+  return values.front();
 }
 
 /*******************************/
@@ -97,39 +107,58 @@ T Heap<T>::getMin() {
 
 template <typename T>
 void Heap<T>::heapify(int parent_index) {
-  // if we're outside the index range, return
   if (parent_index < 0 || parent_index >= values.size()) return;
 
-  // find children indexes
   int left_child_index = parent_index * 2 + 1;
   int right_child_index = parent_index * 2 + 2;
-
-  // if parent is larger than child, swap with smallest child
   int index_of_smallest = parent_index;
 
-  // check if left child exists and if exists, is smallest value there
-  if (left_child_index < values.size() &&
-      values.at(left_child_index) < values.at(index_of_smallest)) {
-    // make this index the current smallest
+  if (left_child_index < values.size() && values[left_child_index] < values[index_of_smallest]) {
     index_of_smallest = left_child_index;
   }
 
-  // check if left child exists and if exists, is smallest value there
-  if (right_child_index < values.size() &&
-      values.at(right_child_index) < values.at(index_of_smallest)) {
-    // make this index the current smallest
+  if (right_child_index < values.size() && values[right_child_index] < values[index_of_smallest]) {
     index_of_smallest = right_child_index;
   }
 
-  // if parent is not smallest, swap with smallest child
   if (index_of_smallest != parent_index) {
-    T temp = values.at(parent_index);
-    values.at(parent_index) = values.at(index_of_smallest);
-    values.at(index_of_smallest) = temp;
+    std::swap(values[parent_index], values[index_of_smallest]);
+    heapify(index_of_smallest);
   }
-
-  // move up the 'tree' to grandparent
-  heapify(floor(parent_index / 2) - 1);
 }
 
-#endif
+template <typename T>
+void Heap<T>::heapifyUp(int index) {
+  while (index > 0) {
+    int parentIndex = (index - 1) / 2;
+    if (values[index] >= values[parentIndex]) {
+      break;
+    }
+    std::swap(values[index], values[parentIndex]);
+    index = parentIndex;
+  }
+}
+
+template <typename T>
+void Heap<T>::heapifyDown(int index) {
+  int size = values.size();
+  while (index < size) {
+    int smallest = index;
+    int leftChild = 2 * index + 1;
+    int rightChild = 2 * index + 2;
+
+    if (leftChild < size && values[leftChild] < values[smallest]) {
+      smallest = leftChild;
+    }
+    if (rightChild < size && values[rightChild] < values[smallest]) {
+      smallest = rightChild;
+    }
+    if (smallest == index) {
+      break;
+    }
+    std::swap(values[index], values[smallest]);
+    index = smallest;
+  }
+}
+
+#endif // HEAP_H
