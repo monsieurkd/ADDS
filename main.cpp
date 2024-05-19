@@ -1,5 +1,5 @@
 #include <iostream>
-#include "AutoComplete.h"
+#include "Autocomplete.h"
 using namespace std;
 
 int main() {
