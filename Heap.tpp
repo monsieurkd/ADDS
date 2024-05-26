@@ -122,7 +122,7 @@ void Heap<T>::heapify(int parent_index) {
   }
 
   if (index_of_smallest != parent_index) {
-    std::swap(values[parent_index], values[index_of_smallest]);
+    std::(values[parent_index], values[index_of_smallest]);
     heapify(index_of_smallest);
   }
 }
